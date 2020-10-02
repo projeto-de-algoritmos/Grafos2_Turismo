@@ -80,3 +80,46 @@ def menorCaminho(partida,destino,grafo = grafo):
             print(neigh, neighcost)
             heapq.heappush(h,(currcost+neighcost,neigh))
         
+def menu():
+    while True:
+        print('01. Listar Cidades')
+        print('02. Listar Pontos Turísticos')
+        print('03. Distancia entre cidade e ponto turístico')
+        print('04. Mostrar Caminho')
+        print('05. Mostrar Grafo')
+        print('06. Encerrar')
+
+        func = int(input('Selecione uma função(1~6): '))
+        if func == 1:
+            print(' ')
+            for cidade in nodes:
+                print('[{}]: {}'.format(cidade, nodes[cidade]))
+                if cidade == 11:
+                    break
+            print(' ')
+        elif func == 2:
+            print(' ')
+            for x in range(13, 30):
+                print('[{}]: {}'.format(x, nodes[x]))
+            print(' ')
+        elif func == 3:
+            partida = int(input('Selecione a cidade de partida(1 - 11): '))
+            destino = int(input('Selecione o ponto turistico de destino(13 - 29): '))
+            print(' ')
+            menorCaminho(partida, destino)
+            # printCaminho(inicio, destino)
+            # print(' ')
+            # nx.draw_circular(G, node_color=color_map, with_labels=True)
+            # plt.show() # display
+        elif func == 4:
+            print(" ")
+            # printGrafo(grafo)
+            # print(" ")
+        elif func == 5:
+            print(" ")
+        elif func ==6:
+            return
+        else:
+            print('Função não definida!\n')
+
+menu()
