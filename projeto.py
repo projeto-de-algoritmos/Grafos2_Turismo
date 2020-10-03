@@ -84,7 +84,6 @@ def dijkstra(partida,destino,grafo = grafo):
           break
       for (neigh,neighcost) in grafo[currvtx]:
           heapq.heappush(h,(currcost+neighcost,neigh))
-          print(neigh)
         
 def menu():
   while True:
@@ -112,6 +111,7 @@ def menu():
           destino = int(input('Selecione o ponto turistico de destino(13 - 29): '))
           print(' ')
           dijkstra(partida, destino)
+          print(" ")
       elif func == 4:
           print(" ")
           printGrafo(grafo)
